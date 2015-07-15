@@ -82,7 +82,3 @@ case "$1" in
     exit 1
     ;;
 esac
-      fi
-      done
-    fi
-  esac
