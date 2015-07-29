@@ -76,5 +76,3 @@ def _cset(name, *args, &block)
     set(name, *args, &block)
   end
 end
-  end
-end
