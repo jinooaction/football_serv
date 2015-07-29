@@ -69,3 +69,12 @@ end
 #     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
 #   end
 # end
+#
+#
+def _cset(name, *args, &block)
+  unless exists?(name)
+    set(name, *args, &block)
+  end
+end
+  end
+end
