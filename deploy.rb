@@ -1,6 +1,6 @@
 require "bundler/capistrano"
 
-set :application, "fooball-serv"
+set :application, "football-serv"
 set :repository,  "git@github.com:jinooaction/football_serv.git"
 set :branch, "master"
 
@@ -13,6 +13,7 @@ role :db,  "14.63.163.75", :primary => true # This is where Rails migrations wil
 #role :db,  "your slave db-server here"
 
 set :user, "deployer"
+set :password, "skdmlgksksla"
 set :deploy_to, "/home/#{user}/apps/#{application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false

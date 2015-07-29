@@ -1,9 +1,9 @@
-root = "/home/deployer/apps/blog/current"
+root = "/home/deployer/apps/football_serv/current"
 working_directory root
 pid "#{root}/tmp/pids/unicorn.pid"
-stderr_path "#{root}/log/unicorn.log"
-stdout_path "#{root}/log/unicorn.log"
+stderr_path "#{root}/log/unicorn_error.log"
+stdout_path "#{root}/log/unicorn_access.log"
 
-listen "/tmp/unicorn.blog.sock"
-worker_processes 2
-timeout 30
+listen "/tmp/unicorn.football_serv.sock"
+worker_processes 5
+timeout 60

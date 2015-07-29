@@ -1,6 +1,8 @@
 require "bundler/capistrano"
+require "whenever/capistrano"
 
-set :application, "fooball-serv"
+set :whenever_command, "bundle exec whenever"
+set :application, "football_serv"
 set :repository,  "git@github.com:jinooaction/football_serv.git"
 set :branch, "master"
 
@@ -13,6 +15,7 @@ role :db,  "14.63.163.75", :primary => true # This is where Rails migrations wil
 #role :db,  "your slave db-server here"
 
 set :user, "deployer"
+set :password, "skdmlgksksla2015"
 set :deploy_to, "/home/#{user}/apps/#{application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false
@@ -58,6 +61,7 @@ namespace :deploy do
     end
   end
   before "deploy", "deploy:check_revision"
+  after "deploy:update_code", "deploy:migrate"
 end
 #   task :start do ; end
 #   task :stop do ; end

@@ -12,7 +12,7 @@ set -e
 
 # Feel free to change any of the following variables for your app:
 TIMEOUT=${TIMEOUT-60}
-APP_ROOT=/home/deployer/apps/blog/current
+APP_ROOT=/home/deployer/apps/football_serv/current
 PID=$APP_ROOT/tmp/pids/unicorn.pid
 CMD="cd $APP_ROOT; bundle exec unicorn -D -c $APP_ROOT/config/unicorn.rb -E production"
 AS_USER=deployer
@@ -29,7 +29,7 @@ oldsig () {
 }
 
 run () {
-  if [ "$(id -un)" = "5AS_USER" ]; then
+  if [ "$(id -un)" = "$AS_USER" ]; then
     eval $1
   else
     su -c "$1" - $AS_USER
