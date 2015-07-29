@@ -1,5 +1,5 @@
 require "bundler/capistrano"
-require "whenever/capistrano"
+#require "whenever/capistrano"
 
 #def _cset(name, *args, &block)
 #  unless exists?(name)
