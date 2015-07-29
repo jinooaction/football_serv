@@ -1,6 +1,12 @@
 require "bundler/capistrano"
 require "whenever/capistrano"
 
+def _cset(name, *args, &block)
+  unless exists?(name)
+    set(name, *args, &block)
+  end
+end
+
 set :whenever_command, "bundle exec whenever"
 set :application, "football_serv"
 set :repository,  "git@github.com:jinooaction/football_serv.git"
@@ -71,8 +77,3 @@ end
 # end
 #
 #
-def _cset(name, *args, &block)
-  unless exists?(name)
-    set(name, *args, &block)
-  end
-end
